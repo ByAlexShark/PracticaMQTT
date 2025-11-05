@@ -2,8 +2,8 @@
 #include <PubSubClient.h>
 #include <Ultrasonic.h>
 
-const char* WIFI_SSID   = "iPhone de Alex";
-const char* WIFI_PASS   = "Adrianito1";
+const char* WIFI_SSID   = "UCB-IoT";
+const char* WIFI_PASS   = "sistemasyteleco";
 
 const char* MQTT_BROKER = "broker.hivemq.com";
 const int   MQTT_PORT   = 1883;
@@ -33,7 +33,7 @@ class UltrasonicSensor {
   Ultrasonic sensor;
 public:
   UltrasonicSensor(int trig, int echo): sensor(trig, echo) {}
-  long readCM() { return sensor.read(); } 
+  long readCM() { return sensor.read(); }
 };
 
 class WiFiConnector {
@@ -82,7 +82,7 @@ public:
       } else {
         Serial.print("failed, rc=");
         Serial.print(client.state());
-        Serial.println(" trying again in 5 seconds");
+        Serial.println(" trying again in 1 seconds");
         delay(1000);
       }
     }
